@@ -1,0 +1,46 @@
+<form class="log-in-form" method="POST"
+action="/item/addnew">
+ <label>Name
+    <input type="text" id="name" name="name" value="<?php 
+    echo isset($_POST['name']) ? $_POST['name'] : '' 
+    ?>">
+  </label>
+
+  <label for="type">Type</label>
+    <select name="type" id="type">
+    <option value="Wondrous">Wondrous Item</option>
+    <option value="Weapon">Weapon</option>
+    <option value="Armor">Armor</option>
+    <option value="Potion">Potion</option>
+    <option value="Scroll">Spell Scroll</option>
+    </select>
+
+  <label>Cost
+  <input type="number" step="0.01" name="cost" id="cost">
+  </label>
+
+  <label>Description
+    <input type="text" id="description" name="description" value="<?php 
+    echo isset($_POST['description']) ? $_POST['description'] : '' 
+    ?>">
+  </label>
+
+  <label for="rarity">Rarity</label>
+  <select name="rarity" id="rarity">
+    <option value="Common">Common item</option>
+    <option value="Uncommon">Uncommon item</option>
+    <option value="Rare">Rare item</option>
+    <option value="Very Rare">Very Rare item</option>
+  </select>
+
+  <div class="grid-x grid-margin-x">
+    <div class="large-6 cell">
+      <a href="/item/index" class="alert button expanded">Odustani</a>
+    </div>
+    <div class="large-6 cell">
+      <input type="submit" class="button expanded" value="Add item"></input>
+    </div>
+  </div>
+  
+</form>
+<?php echo $poruka; ?>

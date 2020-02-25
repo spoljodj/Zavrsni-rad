@@ -1,0 +1,26 @@
+<div class="title-bar" data-responsive-toggle="example-animated-menu" data-hide-for="medium">
+<button class="menu-icon" type="button" data-toggle></button>
+<div class="title-bar-title"><?php echo APP::config('nazivAPP'); ?></div>
+</div>
+<div class="top-bar" id="example-animated-menu" data-animate="hinge-in-from-top spin-out">
+<div class="tob-bar-left"><?php echo APP::config('nazivAPP'); ?></div>
+    <div class="top-bar-right">
+        <ul class="menu">
+            <li class="menu-text show-for-large">
+            </li>
+            <li>
+            <?php if(!isset($_SESSION['admin'])): ?>
+                <a href="<?php echo APP::config('url'); ?>index/prijava">Prijava</a>
+            <?php else:?>
+                <a href="<?php echo APP::config('url'); ?>index/odjava">Odjavi 
+                <?php echo $_SESSION['admin']->username?></a>
+            <?php endif;?>
+                </li>
+            <?php if(isset($_SESSION['admin'])):?>
+                <li><a href="/item/index">Items</a></li>
+                <li><a href="/shop/index">Shops</a></li>
+                <li><a href="/shopkeeper/index">Shopkeepers</a></li>
+            <?php endif; ?>
+        </ul>
+    </div>
+</div>
