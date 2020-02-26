@@ -1,0 +1,63 @@
+<form class="log-in-form" method="POST"
+action="/item/changes">
+ <label>Name
+    <input type="text" id="name" name="name" value="<?php 
+    echo $item->Name;
+    ?>">
+  </label>
+  
+  <label>Type
+    <input type="text" id="type" name="type" value="<?php 
+    echo $item->Type;
+    ?>">
+  </label>
+
+  <label>Cost
+    <input type="text" id="cost" name="cost" value="<?php 
+    echo $item->Cost;
+    ?>">
+  </label>
+
+  <label>Description
+    <input type="text" id="description" name="description" value="<?php 
+    echo $item->Description;
+    ?>">
+  </label>
+
+  <label for="rarity">Rarity</label>
+  <select name="rarity" id="rarity">
+    <option <?php 
+    if($item->Rarity==='Common'){
+      echo ' selected="selected" ';
+    }
+    ?> value="Common">Common</option>
+    <option <?php 
+    if($item->Rarity==='Uncommon'){
+      echo ' selected="selected" ';
+    }
+    ?> value="Uncommon">Uncommon</option>
+    <option <?php 
+    if($item->Rarity==='Rare'){
+      echo ' selected="selected" ';
+    }
+    ?> value="Rare">Rare</option>
+    <option <?php 
+    if($item->Rarity==='Very rare'){
+      echo ' selected="selected" ';
+    }
+    ?> value="Very rare">Very rare</option>
+    
+  </select>
+
+  <div class="grid-x grid-margin-x">
+    <div class="large-6 cell">
+      <a href="/item/index" class="alert button expanded">Odustani</a>
+    </div>
+    <div class="large-6 cell">
+      <input type="submit" class="button expanded" value="Promjeni operatera"></input>
+    </div>
+  </div>
+  <input type="hidden" name="item_id" 
+  value="<?php echo $item->item_id ?>">
+</form>
+<?php echo $poruka; ?>

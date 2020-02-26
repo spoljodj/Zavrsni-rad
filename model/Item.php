@@ -10,6 +10,8 @@ class Item
         $izraz->execute();
         return $izraz->fetchAll();
     }
+
+
     public static function create()
     {
         $veza = DB::getInstanca();
@@ -18,6 +20,8 @@ class Item
         (:name,:type,:cost,:description,:rarity)');
         $izraz->execute($_POST);
     }
+
+
     public static function delete()
     {
         try{
@@ -29,5 +33,25 @@ class Item
             return false;
         }
         return true;
+    }
+
+
+    public static function read($item_id)
+    {
+        $veza = DB::getInstanca();
+        $izraz = $veza->prepare('select item_id, 
+        Name, Type, Cost, Description, Rarity from item
+        where item_id=:item_id');
+        $izraz->execute(['item_id'=>$item_id]);
+        return $izraz->fetch();
+    }
+
+
+    public static function update(){
+        $veza = DB::getInstanca();
+        $izraz=$veza->prepare('update item 
+        set Name=:name,Type=:type,
+        Cost=:cost,Description=:description,Rarity=:rarity where item_id=:item_id');
+        $izraz->execute($_POST);
     }
 }

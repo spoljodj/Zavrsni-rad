@@ -13,18 +13,24 @@ class ItemController extends AutorizacijaController
          'podaci'=>Item::readAll()
      ]);
     }
+
+
     public function new()
     {
         $this->view->render($this->viewDir . 'new',
             ['poruka'=>'Popunite sve tražene podatke']
         );
     }
+
+
     public function addnew()
     {
         
         Item::create();
         $this->index();
     }
+
+
     public function delete()
     {
         
@@ -32,5 +38,28 @@ class ItemController extends AutorizacijaController
             header('location: /item/index');
         }
         
+    }
+
+
+    public function change()
+    {
+        $item = Item::read($_GET['item_id']);
+        if(!$item){
+            $this->index();
+            exit;
+        }
+
+        $this->view->render($this->viewDir . 'change',
+            ['item'=>$item,
+                'poruka'=>'Promjenite željene podatke']
+        );
+     
+    }
+
+
+    public function changes()
+    {
+        Item::update();
+        header('location: /item/index');
     }
 }
