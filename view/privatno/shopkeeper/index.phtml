@@ -1,1 +1,24 @@
-Shopkeeperi
+<div class="grid-x grid-margin-x">
+    <div class="large-8 cell">
+        <form action="/shopkeeper/searchShopkeeper" method="get">
+            <input type="text" name="scon" 
+            id="scon"
+            placeholder="Enter a part of the first name,last name or bussiness type"
+            value="<?php echo isset($_GET['scon']) ? $_GET['scon'] : '' ?>">
+        </form>
+    </div>
+    <div class="large-4 cell">
+        <a class="success button expanded" 
+            href="/shopkeeper/newShopkeeper"
+            style="border: 0px;">
+            Add new Shopkeeper</a>
+    </div>
+</div>
+
+<div class="grid-x grid-margin-x">
+    <?php 
+        foreach($podaci as $red){
+            include 'grid.phtml';
+        }
+        ?>
+</div>

@@ -1,12 +1,12 @@
 drop database if exists zavrsnirad;
 create database zavrsnirad default character set utf8;
-#c:\xampp\mysql\bin\mysql.exe -uedunova -pedunova --default_character_set=utf8 < D:\PP20\zavrsnirad.edunova.hr\zavrsnirad.sql
+#c:\xampp\mysql\bin\mysql.exe -uedunova -pedunova --default_character_set=utf8 < D:\PP20\polaznik01.edunova.hr\zavrsnirad.sql
 use zavrsnirad;
 
 create table shopkeeper(
 shopkeeper_id          int not null primary key auto_increment,
 First_name             varchar(50) not null,
-Last_Name              varchar(50) not null,
+Last_name              varchar(50) not null,
 Race                   varchar(20) not null,
 Bussiness              varchar(20) not null,
 Age                    varchar(10),
@@ -27,13 +27,13 @@ shop_id         int not null primary key auto_increment,
 S_name          varchar(50) not null,
 Type            varchar(50) not null,
 S_size          varchar(20)not null,
-S_description   text not null,
-shopkeeper      int not null
+S_description   text not null
 );
 
 create table generated(
 shop        int not null,
-item        int not null
+item        int not null,
+shopkeeper  int not null
 );
 
 create table admin(
@@ -41,16 +41,17 @@ user_id         int not null primary key auto_increment,
 username        varchar(50) not null,
 userpassword    char(60) not null,
 usermail        varchar(100) not null,
-role            varchar(20)
+role            varchar(20),
+active          boolean not null default false,
+sessionid       varchar(100)
 );
-
-alter table shop add foreign key(shopkeeper) references shopkeeper(shopkeeper_id);
 
 alter table generated add foreign key(shop) references shop(shop_id);
 alter table generated add foreign key(item) references item(item_id);
+alter table generated add foreign key(shopkeeper) references shopkeeper(shopkeeper_id);
 
-insert into admin (user_id,username,userpassword,usermail,role) values 
-(null, 'Administrator', '$2y$10$YhUXusAzdGHCFpcU/WVEY.1fzYUWCeeffaWqlgI8o/QTnJYMO/bNC', 'spoljo1122@gmail.com','admin');
+insert into admin (user_id,username,userpassword,usermail,role,active,sessionid) values 
+(null, 'Administrator', '$2y$10$YhUXusAzdGHCFpcU/WVEY.1fzYUWCeeffaWqlgI8o/QTnJYMO/bNC', 'spoljo1122@gmail.com','admin',true,null);
 
 insert into shopkeeper (shopkeeper_id,First_name,Last_Name,Race,Bussiness,Age,Description) values 
 (null,'Garmek','Runehammer','Dwarf','Blacksmith','135','Beefy dwarf with a stout and firm body, giant nose,black hair, a black beard that goes all the way to his pants. Dressed in a black leather apron,holding a hammer in his hand'),
@@ -95,3 +96,13 @@ insert into item (item_id,Name,Type,Cost,Description,Rarity) values
                                             The creature is friendly to you and your companions, and it acts on your turn. You can use a bonus action to command how the creature moves and what action it takes on its next turn, or to give it general orders, such as to attack your enemies. In the absence of such orders, the creature acts in a fashion appropriate to its nature.
                                             Once three fuzzy objects have been pulled from the bag, the bag can''t be used again until the next dawn.','Uncommon'),
 (null,'','',0,'','');
+
+
+
+
+
+insert into shop(shop_id,S_name,Type,S_size,S_description) values
+(null,'Emperors Emporium','Merchant','Grand',''),
+(null,'Stone Anvil','Blacksmith','Small',''),
+(null,'Hovering Unicorn','Magic','Medium',''),
+(null,'','','','');

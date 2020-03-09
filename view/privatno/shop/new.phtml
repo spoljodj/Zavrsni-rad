@@ -1,0 +1,41 @@
+<form class="log-in-form" method="POST"
+action="/shop/addnew">
+ <label>Shop name
+    <input type="text" id="name" name="name" value="<?php 
+    echo isset($_POST['name']) ? $_POST['name'] : '' 
+    ?>">
+  </label>
+
+  <label for="type">Type</label>
+    <select name="type" id="type">
+    <option value="Magic">Magic shop</option>
+    <option value="Alchemy">Alchemy shop</option>
+    <option value="Blacksmith">Blacksmith shop</option>
+    <option value="Merchant">Merchant shop</option>
+    </select>
+
+    <label for="size">Shop size</label>
+    <select name="size" id="size">
+    <option value="Grand">Grand shop</option>
+    <option value="Large">Large shop</option>
+    <option value="Medium">Medium shop</option>
+    <option value="Small">Small shop</option>
+    </select>
+
+  <label>Shop description
+    <input type="text" id="description" name="description" value="<?php 
+    echo isset($_POST['description']) ? $_POST['description'] : '' 
+    ?>">
+  </label>
+
+  <div class="grid-x grid-margin-x">
+    <div class="large-6 cell">
+      <a href="/shop/index" class="alert button expanded">Cancel</a>
+    </div>
+    <div class="large-6 cell">
+      <input type="submit" class="button expanded" value="Add shop"></input>
+    </div>
+  </div>
+  
+</form>
+<?php echo $poruka; ?>

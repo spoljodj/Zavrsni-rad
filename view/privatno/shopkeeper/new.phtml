@@ -1,0 +1,56 @@
+<form class="log-in-form" method="POST"
+action="/shopkeeper/addnew">
+ <label>Shopkeer first name
+    <input type="text" id="fname" name="fname" value="<?php 
+    echo isset($_POST['fname']) ? $_POST['fname'] : '' 
+    ?>">
+  </label>
+  <label>Shopkeer last name
+    <input type="text" id="lname" name="lname" value="<?php 
+    echo isset($_POST['lname']) ? $_POST['lname'] : '' 
+    ?>">
+  </label>
+  <label for="race">Race</label>
+    <select name="race" id="race">
+    <option value="Halforc">Half Orc</option>
+    <option value="Dwarf">Dwarf</option>
+    <option value="Elf">Elf</option>
+    <option value="Halfelf">Half elf</option>
+    <option value="Human">Human</option>
+    <option value="Halfling">Halfing</option>
+    <option value="Thiefling">Thiefling</option>
+    <option value="Dragonborn">Dragonborn</option>
+    <option value="Gnome">Gnome</option>
+    </select>
+
+    <label for="bussiness">Type of shopkeeper</label>
+    <select name="bussiness" id="bussiness">
+    <option value="Merchant">Merchant</option>
+    <option value="Alchemist">Alchemist</option>
+    <option value="Blacksmith">Blacksmith</option>
+    <option value="Magic">Magic</option>
+    </select>
+
+    <label>Shopkeer's age
+    <input type="number" id="age" name="age" step="1" value="<?php 
+    echo isset($_POST['age']) ? $_POST['age'] : '' 
+    ?>">
+  </label>
+
+  <label>Shopkeeper description
+    <input type="text" id="description" name="description" value="<?php 
+    echo isset($_POST['description']) ? $_POST['description'] : '' 
+    ?>">
+  </label>
+
+  <div class="grid-x grid-margin-x">
+    <div class="large-6 cell">
+      <a href="/shopkeeper/index" class="alert button expanded">Cancel</a>
+    </div>
+    <div class="large-6 cell">
+      <input type="submit" class="button expanded" value="Add shopkeeper"></input>
+    </div>
+  </div>
+  
+</form>
+<?php echo $poruka; ?>

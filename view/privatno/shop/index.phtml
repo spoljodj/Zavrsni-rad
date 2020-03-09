@@ -1,1 +1,24 @@
-Shopovi
+<div class="grid-x grid-margin-x">
+    <div class="large-8 cell">
+        <form action="/shop/searchShop" method="get">
+            <input type="text" name="scon" 
+            id="scon"
+            placeholder="Enter a part of the name,type or size"
+            value="<?php echo isset($_GET['scon']) ? $_GET['scon'] : '' ?>">
+        </form>
+    </div>
+    <div class="large-4 cell">
+        <a class="success button expanded" 
+            href="/shop/newShop"
+            style="border: 0px;">
+            Add new Shop</a>
+    </div>
+</div>
+
+<div class="grid-x grid-margin-x">
+    <?php 
+        foreach($podaci as $red){
+            include 'grid.phtml';
+        }
+        ?>
+</div>

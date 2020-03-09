@@ -1,0 +1,105 @@
+<form class="log-in-form" method="POST"
+action="/shopkeeper/changes">
+ <label>Shopkeeper's first name
+    <input type="text" id="fname" name="fname" value="<?php 
+    echo $shopkeeper->First_name;
+    ?>">
+  </label>
+  
+  <label>Shopkeeper's first name
+    <input type="text" id="lname" name="lname" value="<?php 
+    echo $shopkeeper->Last_name;
+    ?>">
+  </label>
+
+  <label for="race">Shopkeeper's race</label>
+  <select name="race" id="race">
+    <option <?php 
+    if($shopkeeper->Race==='Halforc'){
+      echo ' selected="selected" ';
+    }
+    ?> value="Halforc">Half orc</option>
+    <option <?php 
+    if($shopkeeper->Race==='Dwarf'){
+      echo ' selected="selected" ';
+    }
+    ?> value="Dwarf">Dwarf</option>
+    <option <?php 
+    if($shopkeeper->Race==='Elf'){
+      echo ' selected="selected" ';
+    }
+    ?> value="Elf">Elf</option>
+    <option <?php 
+    if($shopkeeper->Race==='Halfelf'){
+      echo ' selected="selected" ';
+    }
+    ?> value="Halfelf">Half elf</option>
+    <option <?php 
+    if($shopkeeper->Race==='Human'){
+      echo ' selected="selected" ';
+    }
+    ?> value="Human">Human</option>
+    <option <?php 
+    if($shopkeeper->Race==='Halfling'){
+      echo ' selected="selected" ';
+    }
+    ?> value="Halfling">Halfling</option>
+    <option <?php 
+    if($shopkeeper->Race==='Thiefling'){
+      echo ' selected="selected" ';
+    }
+    ?> value="Thiefling">Thiefling</option>
+    <option <?php 
+    if($shopkeeper->Race==='Dragonborn'){
+      echo ' selected="selected" ';
+    }
+    ?> value="Dragonborn">Dragonborn</option>
+    <option <?php 
+    if($shopkeeper->Race==='Gnome'){
+      echo ' selected="selected" ';
+    }
+    ?> value="Gnome">Gnome</option>    
+  </select>
+
+  <label for="bussiness">Type of shopkeeper</label>
+  <select name="bussiness" id="bussiness">
+    <option <?php 
+    if($shopkeeper->Bussiness==='Merchant'){
+      echo ' selected="selected" ';
+    }
+    ?> value="Merchant">Merchant</option>
+    <option <?php 
+    if($shopkeeper->Bussiness==='Blacksmith'){
+      echo ' selected="selected" ';
+    }
+    ?> value="Blacksmith">Blacksmith</option>
+    <option <?php 
+    if($shopkeeper->Bussiness==='Alchemist'){
+      echo ' selected="selected" ';
+    }
+    ?> value="Alchemist">Alchemist</option>
+    <option <?php 
+    if($shopkeeper->Bussiness==='Magic'){
+      echo ' selected="selected" ';
+    }
+    ?> value="Magic">Magic</option>
+    </select>
+
+  <label>Description
+    <input type="text" id="description" name="description" value="<?php 
+    echo $shopkeeper->Description;
+    ?>">
+  </label>
+
+  <div class="grid-x grid-margin-x">
+    <div class="large-6 cell">
+      <a href="/shopkeeper/index" class="alert button expanded">Cancel</a>
+    </div>
+    <div class="large-6 cell">
+      <input type="submit" class="button expanded" value="Change shoopkeeper"></input>
+    </div>
+  </div>
+  <input type="hidden" name="shopkeeper_id" 
+  value="<?php echo $shopkeeper->shopkeeper_id ?>">
+</form>
+<?php echo $poruka; ?>

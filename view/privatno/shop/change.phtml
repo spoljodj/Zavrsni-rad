@@ -1,0 +1,57 @@
+<form class="log-in-form" method="POST"
+action="/shop/changes">
+ <label>Shop name
+    <input type="text" id="name" name="name" value="<?php 
+    echo $shop->S_name;
+    ?>">
+  </label>
+  
+  <label>Type
+    <input type="text" id="type" name="type" value="<?php 
+    echo $shop->Type;
+    ?>">
+  </label>
+
+  <label for="size">Shop size</label>
+  <select name="size" id="size">
+    <option <?php 
+    if($shop->S_size==='Grand'){
+      echo ' selected="selected" ';
+    }
+    ?> value="Grand">Grand shop</option>
+    <option <?php 
+    if($shop->S_size==='Large'){
+      echo ' selected="selected" ';
+    }
+    ?> value="Large">Large shop</option>
+    <option <?php 
+    if($shop->S_size==='Medium'){
+      echo ' selected="selected" ';
+    }
+    ?> value="Medium">Medium Shop</option>
+    <option <?php 
+    if($shop->S_size==='Small'){
+      echo ' selected="selected" ';
+    }
+    ?> value="Small">Small shop</option>
+    
+  </select>
+
+  <label>Description
+    <input type="text" id="description" name="description" value="<?php 
+    echo $shop->S_description;
+    ?>">
+  </label>
+
+  <div class="grid-x grid-margin-x">
+    <div class="large-6 cell">
+      <a href="/shop/index" class="alert button expanded">Cancel</a>
+    </div>
+    <div class="large-6 cell">
+      <input type="submit" class="button expanded" value="Change shop"></input>
+    </div>
+  </div>
+  <input type="hidden" name="shop_id" 
+  value="<?php echo $shop->shop_id ?>">
+</form>
+<?php echo $poruka; ?>

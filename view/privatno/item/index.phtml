@@ -1,4 +1,20 @@
-<a class="success button expanded" href="/item/new">Add new item</a>
+<div class="grid-x grid-margin-x">
+    <div class="large-8 cell">
+        <form action="/item/searchItem" method="get">
+            <input type="text" name="scon" 
+            id="scon"
+            placeholder="Enter a part of the name,type or rarity"
+            value="<?php echo isset($_GET['scon']) ? $_GET['scon'] : '' ?>">
+        </form>
+    </div>
+    <div class="large-4 cell">
+        <a class="success button expanded" 
+            href="/item/newItem"
+            style="border: 0px;">
+            Add new item</a>
+    </div>
+</div>
+
 <div class="grid-x grid-margin-x">
     <?php 
         foreach($podaci as $red){

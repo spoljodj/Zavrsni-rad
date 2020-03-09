@@ -7,6 +7,13 @@ class ItemController extends AutorizacijaController
     DIRECTORY_SEPARATOR . 'item' .
     DIRECTORY_SEPARATOR;
 
+    public function searchItem()
+    {
+        $this->view->render($this->viewDir . 'index',[
+            'podaci'=>Item::searchItem($_GET['scon'])
+           ]);
+    }
+
     public function index()
     {
          $this->view->render($this->viewDir . 'index',[
@@ -15,7 +22,7 @@ class ItemController extends AutorizacijaController
     }
 
 
-    public function new()
+    public function newItem()
     {
         $this->view->render($this->viewDir . 'new',
             ['poruka'=>'Popunite sve tražene podatke']

@@ -2,6 +2,14 @@
 
 class Item
 {
+    public static function searchItem($scon)
+    {
+        $scon='%'.$scon.'%';
+        $veza = DB::getInstanca();
+        $izraz = $veza->prepare('select * from item where concat(Name,\'\',Type,\'\',Rarity,\'\') like :scon');
+        $izraz->execute(['scon' => $scon]);
+        return $izraz->fetchAll();
+    }
     public static function readAll()
     {
         $veza = DB::getInstanca();
