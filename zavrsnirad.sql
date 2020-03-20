@@ -73,6 +73,10 @@ insert into shopkeeper (shopkeeper_id,First_name,Last_Name,Race,Bussiness,Age,De
 (null,'Laiex','Inanan','Elf','Blacksmith','500','Male elf,has a serious face full of wrinkles. His age is obvious on his face and his behaviour. Considers himself the smartest person around. Likes to haggle for prices and always tries to undercut the sellers.'),
 (null,'Glim','Burez','Human','Blacksmith','51','Human male with an eyepatch over his left eye. Has strong arms beffiting a blacksmith and carries a heavy hammer with himself. Has a dark brown hair and a well kept moustache on his face.'),
 (null,'Steth','Threewood','Human','Blacksmith','44','Human male wearing a brown leather appron thats smeared all over with coal. Brawny type of body with a height of 179cm.Has a square chin and a little beard growing.'),
+(null,'Nihrovel','Bhosso','Human','Blacksmith','48','Human male dressed in commoner clothes, black leather appron and a mask on his face. Underneath the mask you can see his messy beard with little metal scraps in it.'),
+(null,'Re','Stirav','Human','Blacksmith','33','Human male with glasses and a hammer on his side. Bulky builded making the glasses look really small. Always has a smile on his face while he is forging.'),
+(null,'Pia','Xay','Human','Blacksmith','29','Female human with a lean build. Currently wearing a short sleeved shirt and trousers. Her face is a little dirty due to working in the furnance'),
+(null,'Ermeros',' ','Tiefling','Blacksmith','33','Male thiefling with small goat horns. Has a purplish colored skin and a rather large figure for a thiefling. Buffed up arms that look like they can squeeze rocks.'),
 (null,'','','','Blacksmith','','');
 
 
