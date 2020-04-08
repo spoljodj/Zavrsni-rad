@@ -6,7 +6,7 @@ class Item
     {
         $scon='%'.$scon.'%';
         $veza = DB::getInstanca();
-        $izraz = $veza->prepare('select * from item where concat(Name,\'\',Type,\'\',Rarity,\'\') like :scon');
+        $izraz = $veza->prepare('select * from item where concat(Name,\'\',Itype,\'\',Rarity,\'\') like :scon');
         $izraz->execute(['scon' => $scon]);
         return $izraz->fetchAll();
     }
@@ -14,7 +14,7 @@ class Item
     {
         $veza = DB::getInstanca();
         $izraz = $veza->prepare('select item_id, 
-        Name, Type, Cost, Description, Rarity from item');
+        Name, Itype, Cost, Description, Rarity from item');
         $izraz->execute();
         return $izraz->fetchAll();
     }
@@ -24,7 +24,7 @@ class Item
     {
         $veza = DB::getInstanca();
         $izraz=$veza->prepare('insert into item 
-        (Name,Type,Cost,Description,Rarity) values 
+        (Name,Itype,Cost,Description,Rarity) values 
         (:name,:type,:cost,:description,:rarity)');
         $izraz->execute($_POST);
     }
@@ -48,7 +48,7 @@ class Item
     {
         $veza = DB::getInstanca();
         $izraz = $veza->prepare('select item_id, 
-        Name, Type, Cost, Description, Rarity from item
+        Name, Itype, Cost, Description, Rarity from item
         where item_id=:item_id');
         $izraz->execute(['item_id'=>$item_id]);
         return $izraz->fetch();
@@ -58,7 +58,7 @@ class Item
     public static function update(){
         $veza = DB::getInstanca();
         $izraz=$veza->prepare('update item 
-        set Name=:name,Type=:type,
+        set Name=:name,Itype=:type,
         Cost=:cost,Description=:description,Rarity=:rarity where item_id=:item_id');
         $izraz->execute($_POST);
     }

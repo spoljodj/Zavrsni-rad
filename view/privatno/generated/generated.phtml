@@ -1,148 +1,21 @@
-<?php
-switch ($_GET['type']){
-    case 'Blacksmith':
-        switch($_GET['size']){
-            case 'Small': 
-                ?>
-                <div class="grid-x grid-padding-x">Shop s</div>
-                <div class="grid-x grid-padding-x">Shopkeeper s</div>
-                <div class="grid-x grid-padding-x">Itemi s</div>
-                <?php
-            break;
-
-            case 'Medium':
-                ?>
-                <div class="grid-x grid-padding-x">Shop m</div>
-                <div class="grid-x grid-padding-x">Shopkeeper m</div>
-                <div class="grid-x grid-padding-x">Itemi m</div>
-                <?php
-            break;
-
-            case 'Large':
-                ?>
-                <div class="grid-x grid-padding-x">Shop l</div>
-                <div class="grid-x grid-padding-x">Shopkeeper l</div>
-                <div class="grid-x grid-padding-x">Itemi l</div>
-                <?php
-            break;
-            
-            case 'Grand':
-                ?>
-                <div class="grid-x grid-padding-x">Shop xl</div>
-                <div class="grid-x grid-padding-x">Shopkeeper xl</div>
-                <div class="grid-x grid-padding-x">Itemi xl</div>
-                <?php
-            break;
+<div>
+    <?php
+     echo $shop->S_name;
+     echo '<br>' . $shop->S_size . ' ' . $shop->Type . '</br>';
+     echo '<br>' . $shop->S_description . '</br>';
+    ?>
+ </div>
+<div>
+    <?php
+        echo $shopkeeper->First_name . ' ' . $shopkeeper->Last_name . '</br>';
+        echo $shopkeeper->Race . ' ' . $shopkeeper->Age . '</br>';
+        echo $shopkeeper->Description;
+        ?>
+</div>
+<div class="grid-x grid-margin-x">
+    <?php 
+        foreach($items as $row){
+            include 'items.phtml';
         }
-    break;
-
-    case 'Merchant':
-        switch($_GET['size']){
-            case 'Small': 
-                ?>
-                <div class="grid-x grid-padding-x">Shop s</div>
-                <div class="grid-x grid-padding-x">Shopkeeper s</div>
-                <div class="grid-x grid-padding-x">Itemi s</div>
-                <?php
-            break;
-
-            case 'Medium':
-                ?>
-                <div class="grid-x grid-padding-x">Shop m</div>
-                <div class="grid-x grid-padding-x">Shopkeeper m</div>
-                <div class="grid-x grid-padding-x">Itemi m</div>
-                <?php
-            break;
-
-            case 'Large':
-                ?>
-                <div class="grid-x grid-padding-x">Shop l</div>
-                <div class="grid-x grid-padding-x">Shopkeeper l</div>
-                <div class="grid-x grid-padding-x">Itemi l</div>
-                <?php
-            break;
-            
-            case 'Grand':
-                ?>
-                <div class="grid-x grid-padding-x">Shop xl</div>
-                <div class="grid-x grid-padding-x">Shopkeeper xl</div>
-                <div class="grid-x grid-padding-x">Itemi xl</div>
-                <?php
-            break;
-        }
-    break;
-    
-    case 'Magic':
-        switch($_GET['size']){
-            case 'Small': 
-                ?>
-                <div class="grid-x grid-padding-x">Shop s</div>
-                <div class="grid-x grid-padding-x">Shopkeeper s</div>
-                <div class="grid-x grid-padding-x">Itemi s</div>
-                <?php
-            break;
-
-            case 'Medium':
-                ?>
-                <div class="grid-x grid-padding-x">Shop m</div>
-                <div class="grid-x grid-padding-x">Shopkeeper m</div>
-                <div class="grid-x grid-padding-x">Itemi m</div>
-                <?php
-            break;
-
-            case 'Large':
-                ?>
-                <div class="grid-x grid-padding-x">Shop l</div>
-                <div class="grid-x grid-padding-x">Shopkeeper l</div>
-                <div class="grid-x grid-padding-x">Itemi l</div>
-                <?php
-            break;
-            
-            case 'Grand':
-                ?>
-                <div class="grid-x grid-padding-x">Shop xl</div>
-                <div class="grid-x grid-padding-x">Shopkeeper xl</div>
-                <div class="grid-x grid-padding-x">Itemi xl</div>
-                <?php
-            break;
-        }
-    break;
-
-    case 'Alchemist':
-        switch($_GET['size']){
-            case 'Small': 
-                ?>
-                <div class="grid-x grid-padding-x">Shop s</div>
-                <div class="grid-x grid-padding-x">Shopkeeper s</div>
-                <div class="grid-x grid-padding-x">Itemi s</div>
-                <?php
-            break;
-
-            case 'Medium':
-                ?>
-                <div class="grid-x grid-padding-x">Shop m</div>
-                <div class="grid-x grid-padding-x">Shopkeeper m</div>
-                <div class="grid-x grid-padding-x">Itemi m</div>
-                <?php
-            break;
-
-            case 'Large':
-                ?>
-                <div class="grid-x grid-padding-x">Shop l</div>
-                <div class="grid-x grid-padding-x">Shopkeeper l</div>
-                <div class="grid-x grid-padding-x">Itemi l</div>
-                <?php
-            break;
-            
-            case 'Grand':
-                ?>
-                <div class="grid-x grid-padding-x">Shop xl</div>
-                <div class="grid-x grid-padding-x">Shopkeeper xl</div>
-                <div class="grid-x grid-padding-x">Itemi xl</div>
-                <?php
-            break;
-        }
-    break;
-};
-
-?>
+    ?>
+</div>
