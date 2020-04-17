@@ -9,16 +9,40 @@ class ItemController extends AutorizacijaController
 
     public function searchItem()
     {
+        
+        if(!isset($_GET['page']) || $_GET['page']=='0'){
+            $page=1;
+        }else{
+            $page=$_GET['page'];
+        }
+
+        $podaci = Item::searchItem($_GET['scon'],
+        $page);
+
+        if(count($podaci)===0){
+            $page--;
+            $podaci = Item::searchItem($_GET['scon'],
+            $page);
+        }
+
+        $this->renderIndex($podaci,$page,$_GET['scon'],
+        Item::totalpage($_GET['scon']));
+    }
+
+    private function renderIndex($podaci,$page,$scon,$maxpage){
         $this->view->render($this->viewDir . 'index',[
-            'podaci'=>Item::searchItem($_GET['scon'])
+            'podaci'=>$podaci,
+            'page' => $page,
+            'scon' => $scon,
+            'maxpage' => $maxpage,
            ]);
     }
 
+
     public function index()
     {
-         $this->view->render($this->viewDir . 'index',[
-         'podaci'=>Item::readAll()
-     ]);
+        $this->renderIndex(Item::searchItem('','1'),'1','',
+        item::totalpage(''));
     }
 
 

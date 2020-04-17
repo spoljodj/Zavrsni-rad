@@ -10,6 +10,11 @@ class IndexController extends Controller
             'email'=>''
         ]);
     }
+    
+    public function era()
+    {
+        $this->view->render('era');
+    }
 
     public function autorizacija()
     {
@@ -77,7 +82,7 @@ class IndexController extends Controller
     }
     public function test()
     {
-     //echo password_hash('caau.99F',PASSWORD_BCRYPT);
+     //echo password_hash('za',PASSWORD_BCRYPT);
       
     } 
 }

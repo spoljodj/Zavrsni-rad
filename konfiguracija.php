@@ -4,6 +4,7 @@ return [
     'nazivAPP' => 'Završni rad',
     'url' => 'http://polaznik01.edunova.hr/',
     'dev' => true,
+    'resultsperpage'=> 9,
       /*
     'db' =>[
         'server' => 'localhost',
