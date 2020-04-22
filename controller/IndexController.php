@@ -82,7 +82,7 @@ class IndexController extends Controller
     }
     public function test()
     {
-     //echo password_hash('za',PASSWORD_BCRYPT);
+     echo password_hash('e',PASSWORD_BCRYPT);
       
     } 
 }

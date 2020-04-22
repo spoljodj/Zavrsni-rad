@@ -6,7 +6,7 @@
         </br>
         <?php echo $red->Cost . 'G ' . $red->Rarity ?>
         </br>
-        <textarea name="" id="" cols="60" rows="8"><?php echo $red->Description?></textarea>
+        <textarea disabled name="" id="" cols="60" rows="8"><?php echo $red->Description?></textarea>
         </br>
         <a href="/item/change?item_id=<?php echo $red->item_id ?>"><i title="Promjeni" class="fas fa-edit fa-2x"></i></a>
         <a onclick="return confirm('Are you sure you want to delete <?php echo $red->Name?>');" href="/item/delete?item_id=<?php echo $red->item_id ?>"><i title="Delete" class="fas fa-trash fa-2x" style="color: red;"></i></a>

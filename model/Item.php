@@ -69,10 +69,8 @@ class Item
     {
         $scon='%'.$scon.'%';
         $veza = DB::getInstanca();
-        $izraz = $veza->prepare('
-        
-        select count(item_id) from item 
-        where :scon ');
+        $izraz = $veza->prepare('        
+        select count(item_id) from item where concat(Name,\'\',Itype,\'\',Rarity,\'\') like :scon ');
         $izraz->bindParam('scon',$scon);
         $izraz->execute();
         $totalresults=$izraz->fetchColumn();

@@ -4,7 +4,7 @@
         </br>
         <?php echo $red->S_size . ' ' . $red->Type . ' shop';  ?>
         </br>
-        <textarea name="" id="" cols="30" rows="10"><?php echo $red->S_description ;?></textarea>
+        <textarea disabled name="" id="" cols="30" rows="10"><?php echo $red->S_description ;?></textarea>
         </br>
         <a href="/shop/change?shop_id=<?php echo $red->shop_id ?>"><i title="Promjeni" class="fas fa-edit fa-2x"></i></a>
         <a onclick="return confirm('Are you sure you want to delete <?php echo $red->S_name?>');" href="/shop/delete?shop_id=<?php echo $red->shop_id ?>"><i title="Delete" class="fas fa-trash fa-2x" style="color: red;"></i></a>

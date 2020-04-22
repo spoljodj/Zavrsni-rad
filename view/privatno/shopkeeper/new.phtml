@@ -38,9 +38,9 @@ action="/shopkeeper/addnew">
   </label>
 
   <label>Shopkeeper description
-    <input type="text" id="description" name="description" value="<?php 
+  <textarea  name="description" id="description" cols="60" rows="8"><?php 
     echo isset($_POST['description']) ? $_POST['description'] : '' 
-    ?>">
+    ?></textarea>
   </label>
 
   <div class="grid-x grid-margin-x">

@@ -49,7 +49,7 @@ class Shopkeeper
     {
         $veza = DB::getInstanca();
         $izraz = $veza->prepare('select shopkeeper_id, 
-        First_name,Last_name,Race,Bussiness,Age,Description from shop
+        First_name,Last_name,Race,Bussiness,Age,Description from shopkeeper
         where shopkeeper_id=:shopkeeper_id');
         $izraz->execute(['shopkeeper_id'=>$shopkeeper_id]);
         return $izraz->fetch();

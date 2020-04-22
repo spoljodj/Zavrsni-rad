@@ -8,7 +8,7 @@ action="/item/changes">
   
   <label>Type
     <input type="text" id="type" name="type" value="<?php 
-    echo $item->Type;
+    echo $item->Itype;
     ?>">
   </label>
 
@@ -19,9 +19,9 @@ action="/item/changes">
   </label>
 
   <label>Description
-    <input type="text" id="description" name="description" value="<?php 
+  <textarea  name="description" id="description" cols="60" rows="8"><?php 
     echo $item->Description;
-    ?>">
+    ?></textarea>
   </label>
 
   <label for="rarity">Rarity</label>
